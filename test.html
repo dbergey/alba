@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="https://raw.github.com/jquery/jquery-ui/master/ui/jquery.ui.position.js"></script>
+	<script src="https://raw.github.com/jquery/jquery-ui/master/ui/jquery.ui.widget.js"></script>
+	<script src="jquery.alba.move.js"></script>
+	<script src="jquery.alba.eclipse.js"></script>
+	<script src="jquery.alba.placeholder.js"></script>
+	<script>
+	$(function() {
+		for (var x in [1, 2, 3, 4, 5]) {
+			$('.group').first().clone().addClass('group'+(Number(x)+1)).appendTo('body');
+		}
+		$('.group').first().remove();
+		$('.snow').placeholder({ stay: false });
+		$('.lion').placeholder({ stay: true });
+		
+		setTimeout(function() {
+			$('.group').animate({ marginLeft: '+=10' }, { duration: 250 });
+		}, 1000)
+		setTimeout(function() {
+			$('.group').animate({ marginTop: '+=3' }, { duration: 20 });
+		}, 100);
+	});
+	</script>
+	<style>
+		block { float: left; }
+		block label { font: bold 11px arial; text-transform: uppercase; display: block; }
+		.group {
+			padding-bottom: 10px;
+			clear: left;
+		}
+		.group1 input { }
+		.group2 input { padding: 10px; }
+		.group3 input { margin: 10px; }
+		.group4 input { padding: 0 0 10px 10px; }
+		.group5 input { margin: 0 0 10px 10px; }
+	</style>
+</head>
+<body>
+	<div class="group">
+		<block>
+			<label>Snow</label><input type="text" class="snow" placeholder="First">
+		</block>
+		<block>
+			<label>Lion</label><input type="text" class="lion" placeholder="Middle">
+		</block>
+		<block>
+			<label>Default</label><input type="text" class="default" placeholder="Last">
+		</block>
+	</div>
+</body>
+</html>
