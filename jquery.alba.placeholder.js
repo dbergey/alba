@@ -11,6 +11,7 @@ jQuery(function($) {
 			color: 'rgba(0, 0, 0, 0.35)' // or #ccc, for crappy browsers maybe
 		},
 		_create: function() {
+			if (this.clone) return this.clone;
 			this.clone = this.element.eclipse({ debug: this.options.debug }).eclipse('fetch');
 			this.element.attr('_placeholder', this.element.attr('placeholder'));
 			this.element.removeAttr('placeholder');
