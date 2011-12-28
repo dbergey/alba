@@ -25,7 +25,7 @@ jQuery(function($) {
 				zIndex: this.element.css('zIndex') +2
 			});
 			
-			$.each('paddingTop paddingRight paddingLeft paddingBottom fontSize fontFamily fontWeight fontStyle letterSpacing lineHeight textDecoration borderTopWidth borderRightWidth borderBottomWidth borderLeftWidth verticalAlign'.split(' '), $.proxy(function(i, prop) {
+			$.each('paddingTop paddingRight paddingLeft paddingBottom fontSize fontFamily fontWeight fontStyle letterSpacing lineHeight textAlign textDecoration borderTopWidth borderRightWidth borderBottomWidth borderLeftWidth verticalAlign'.split(' '), $.proxy(function(i, prop) {
 				this.clone.css(prop, this.element.css(prop));
 			}, this));
 			
