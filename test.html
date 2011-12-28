@@ -9,7 +9,7 @@
 	<script src="jquery.alba.placeholder.js"></script>
 	<script>
 	$(function() {
-		for (var x in [1, 2, 3, 4, 5]) {
+		for (var x in [1, 2, 3, 4, 5, 6, 7, 8]) {
 			$('.group').first().clone().addClass('group'+(Number(x)+1)).appendTo('body');
 		}
 		$('.group').first().remove();
@@ -21,34 +21,38 @@
 		}, 1000)
 		setTimeout(function() {
 			$('.group').animate({ marginTop: '+=3' }, { duration: 20 });
-		}, 100);
+		}, 200);
 	});
 	</script>
 	<style>
-		block { float: left; }
-		block label { font: bold 11px arial; text-transform: uppercase; display: block; }
+		.block { float: left; }
+		.block label { font: bold 11px arial; text-transform: uppercase; display: block; }
 		.group {
 			padding-bottom: 10px;
 			clear: left;
 		}
-		.group1 input { }
+		.group1, .group2, .group3 { position: relative; }
+		.group1 input {}
 		.group2 input { padding: 10px; }
 		.group3 input { margin: 10px; }
 		.group4 input { padding: 0 0 10px 10px; }
 		.group5 input { margin: 0 0 10px 10px; }
+		.group6 input { height: 100px; vertical-align: center; }
+		.group7 input { font-size: 24px; }
+		.group8 input { margin: 10px; padding: 10px; font-size: 24px; }
 	</style>
 </head>
 <body>
 	<div class="group">
-		<block>
+		<div class="block">
 			<label>Snow</label><input type="text" class="snow" placeholder="First">
-		</block>
-		<block>
+		</div>
+		<div class="block">
 			<label>Lion</label><input type="text" class="lion" placeholder="Middle">
-		</block>
-		<block>
+		</div>
+		<div class="block">
 			<label>Default</label><input type="text" class="default" placeholder="Last">
-		</block>
+		</div>
 	</div>
 </body>
 </html>

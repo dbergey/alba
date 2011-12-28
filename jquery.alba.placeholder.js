@@ -1,3 +1,7 @@
+/*
+TODO:
+- pass rightclicks through so field context menus appear even when clone is visible
+*/
 jQuery(function($) {
 	$.widget('alba.placeholder', {
 		options: {
@@ -36,7 +40,7 @@ jQuery(function($) {
 			// 		}, this), 100);
 			// 	}
 			// }, this));
-
+			
 			this.element.bind('keydown.alba_placeholder', $.proxy(function() {
 				if (this.options.stay)
 					setTimeout($.proxy(function() {
