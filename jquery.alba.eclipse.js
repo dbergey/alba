@@ -25,16 +25,13 @@ jQuery(function($) {
 				zIndex: this.element.css('zIndex') +2
 			});
 			
-			$.each('paddingTop paddingRight paddingLeft paddingBottom fontSize fontFamily fontWeight fontStyle letterSpacing lineHeight textAlign textDecoration borderTopWidth borderRightWidth borderBottomWidth borderLeftWidth verticalAlign'.split(' '), $.proxy(function(i, prop) {
+			$.each('paddingTop paddingRight paddingLeft paddingBottom fontSize fontFamily fontWeight fontStyle letterSpacing lineHeight textAlign textDecoration borderTopWidth borderRightWidth borderBottomWidth borderLeftWidth verticalAlign boxSizing webkitBoxSizing mozBoxSizing'.split(' '), $.proxy(function(i, prop) {
 				this.clone.css(prop, this.element.css(prop));
 			}, this));
 			
-			$(this.clone).position({
+			$(this.clone).filter(':visible').position({
 				my: 'left top',
 				at: 'left top',
-				// offset: (String(this.options.offset) != this.options.offset) ?
-				// 	(this.options.offset.left +' '+ this.options.offset.top)
-				// 		: this.options.offset,
 				of: this.element
 			});
 		},

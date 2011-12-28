@@ -7,8 +7,8 @@ jQuery(function($) {
 		options: {
 			debug: false,
 			stay: true, // stay = lion-style (stays until keypress, even if field has focused)
-			fx: 'fade', // 'fade' or false
-			color: 'rgba(0, 0, 0, 0.35)' // or #ccc, for crappy browsers maybe
+			fx: ($.browser.msie && $.browser.version < 9) ? false : 'fade', // 'fade' or false
+			color: ($.browser.msie && $.browser.version < 9) ? '#cccccc' : 'rgba(0, 0, 0, 0.35)'
 		},
 		_create: function() {
 			if (this.clone) return this.clone;

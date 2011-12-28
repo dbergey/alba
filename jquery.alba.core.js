@@ -1,21 +1,25 @@
 jQuery(function($) {
 	
-	function setUpPlaceholders() {
-		$('input[placeholder]').placeholder({
-			stay: true
-		});
-	}
-	
+	var placeholderSelector = 'input[placeholder], textarea[placeholder]';
+	var placeholderOptions = { stay: true };
+
 	// initial setup
-	setUpPlaceholders();
+	$(placeholderSelector).placeholder(placeholderOptions);
 	
 	// all future page modifications
 	// IS THIS TOO MUCH??
-	var throttleTimeout;
-	$('body').bind('DOMSubtreeModified', function() {
-		clearTimeout(throttleTimeout);
-		throttleTimeout = setTimeout(function() {
-			setUpPlaceholders();
-		}, 200);
-	});
+	// var throttleTimeout;
+	// $(document).bind('DOMNodeInserted', function(event) {
+	// 	clearTimeout(throttleTimeout);
+	// 	throttleTimeout = setTimeout(function() {
+	// 		// DEBUG
+	// 		console.log('insert:', $(event.target).find(placeholderSelector));
+	// 		$(event.target).find(placeholderSelector).placeholder(placeholderOptions);
+	// 	}, 300);
+	// });
+	// $('body').bind('DOMNodeRemoved', function(event) {
+	// 	// DEBUG
+	// 	console.log('remove:', $(event.target).find(placeholderSelector));
+	// 	$(event.target).find(placeholderSelector).placeholder('destroy');
+	// });
 });
