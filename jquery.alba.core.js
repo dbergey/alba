@@ -2,7 +2,6 @@ jQuery(function($) {
 	
 	function setUpPlaceholders() {
 		$('input[placeholder]').placeholder({
-			debug: true,
 			stay: true
 		});
 	}
