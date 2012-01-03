@@ -12,12 +12,16 @@ jQuery(function($) {
 		},
 		_create: function() {
 			if (this.clone) return this.clone;
-			this.clone = this.element.eclipse({ debug: this.options.debug }).eclipse('fetch');
+			this.clone = this.element.eclipse({
+				debug: this.options.debug,
+				addendum: $.extend({
+					cursor: 'text',
+					color: this.options.color
+				}, this.element.is('input[type=search]') ? { paddingLeft: 25 } : {})
+			}).eclipse('fetch');
 			this.element.attr('_placeholder', this.element.attr('placeholder'));
 			this.element.removeAttr('placeholder');
 			this.clone.css({
-				cursor: 'text',
-				color: this.options.color,
 				display: this.element.val().length ? 'none' : 'block'
 			}).text(this.element.attr('_placeholder'));
 			

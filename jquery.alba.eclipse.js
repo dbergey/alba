@@ -1,7 +1,8 @@
 jQuery(function($) {
 	$.widget('alba.eclipse', {
 		options: {
-			debug: false
+			debug: false,
+			addendum: {}
 			// offset: '0 0' // or {left: 0, top: 0}
 		},
 		_create: function() {
@@ -27,6 +28,10 @@ jQuery(function($) {
 			
 			$.each('paddingTop paddingRight paddingLeft paddingBottom fontSize fontFamily fontWeight fontStyle letterSpacing lineHeight textAlign textDecoration borderTopWidth borderRightWidth borderBottomWidth borderLeftWidth verticalAlign boxSizing webkitBoxSizing mozBoxSizing'.split(' '), $.proxy(function(i, prop) {
 				this.clone.css(prop, this.element.css(prop));
+			}, this));
+			
+			$.each(this.options.addendum, $.proxy(function(prop, val) {
+				this.clone.css(prop, val);
 			}, this));
 			
 			$(this.clone).filter(':visible').position({
