@@ -11,6 +11,8 @@ jQuery(function($) {
 			color: ($.browser.msie && $.browser.version < 9) ? '#cccccc' : 'rgba(0, 0, 0, 0.35)'
 		},
 		_create: function() {
+			// suppress on iOS, since we don't pass focus through nicely yet
+			if (navigator.userAgent.match(/iPhone|iPad/)) return false;
 			if (this.clone) return this.clone;
 			this.clone = this.element.eclipse({
 				debug: this.options.debug,
