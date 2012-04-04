@@ -18,6 +18,12 @@ jQuery(function($) {
 				debug: this.options.debug,
 				addendum: $.extend({
 					cursor: 'text',
+					// disallow selection of placeholder text
+					'-webkit-user-select': 'none',
+					'-khtml-user-select': 'none',
+					'-moz-user-select': 'none',
+					'-ms-user-select': 'none',
+					'user-select': 'none',
 					color: this.options.color
 				}, this.element.is('input[type=search]') ? { paddingLeft: 25 } : {})
 			}).eclipse('fetch');
