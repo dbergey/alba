@@ -44,14 +44,15 @@
 </head>
 <body>
 	<div class="group">
-		<div class="block">
-			<label>Snow</label><input type="text" class="snow" placeholder="First">
+		<a href="#" onclick="$(this).siblings('.block').toggle(); return false;">toggle</a>
+		<div class="block" style="display: none;">
+			<label>Snow</label><input type="text" class="snow" placeholder="First" value="">
 		</div>
 		<div class="block">
-			<label>Lion</label><input type="text" class="lion" placeholder="Middle">
+			<label>Lion</label><input type="text" class="lion" placeholder="Middle" value="">
 		</div>
 		<div class="block">
-			<label>Default</label><input type="text" class="default" placeholder="Last">
+			<label>Default</label><input type="text" class="default" placeholder="Last" value="">
 		</div>
 	</div>
 </body>

@@ -41,7 +41,6 @@ jQuery(function($){
 			els.each(function() {
 				var el = $(this);
 				var pos = el.data('moveEventPosition') || {};
-				if ( pos.left == 0 && pos.top == 0 ) return;
 				var offset = el.offset();
 				if ( pos.left != offset.left || pos.top != offset.top || pos.height != el.height() || pos.width != el.width()) {
 					el.trigger('move');
