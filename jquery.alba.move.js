@@ -34,9 +34,6 @@ jQuery(function($){
 				el.data('moveEventPosition', el.offset());
 			});
 		},
-		remove: function(event) {
-			els = els.remove(this == document ? event.selector : this);
-		},
 		interval: function() {
 			els.each(function() {
 				var el = $(this);
