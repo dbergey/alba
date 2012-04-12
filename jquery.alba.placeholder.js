@@ -18,6 +18,10 @@ jQuery(function($) {
 				debug: this.options.debug,
 				addendum: $.extend({
 					cursor: 'text',
+					// keep placeholders on one line (unless it's a textarea)
+					'overflow': 'hidden',
+					'text-overflow': 'ellipsis',
+					'white-space': this.element.is('textarea') ? 'wrap' : 'nowrap',
 					// disallow selection of placeholder text
 					'-webkit-user-select': 'none',
 					'-khtml-user-select': 'none',
