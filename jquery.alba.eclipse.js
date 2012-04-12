@@ -16,7 +16,7 @@ jQuery(function($) {
 			// so we can see it
 			if (this.options.debug) this.clone.css({ background: 'rgba(0, 0, 255, 0.1)' });
 			
-			this.element.bind('move.alba_eclipse', $.proxy(this.refresh, this)).trigger('move');
+			this.element.unbind('move.alba_eclipse').bind('move.alba_eclipse', $.proxy(this.refresh, this)).trigger('move');
 		},
 		refresh: function() {
 			// reposition and resize
