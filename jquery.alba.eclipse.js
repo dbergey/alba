@@ -11,7 +11,7 @@ jQuery(function($) {
 				background: 'transparent',
 				borderColor: 'transparent',
 				borderStyle: 'solid'
-			}).insertBefore(this.element);
+			}).addClass('alba-placeholder').insertBefore(this.element);
 			
 			// so we can see it
 			if (this.options.debug) this.clone.css({ background: 'rgba(0, 0, 255, 0.1)' });
