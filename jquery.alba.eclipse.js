@@ -2,8 +2,8 @@ jQuery(function($) {
 	$.widget('alba.eclipse', {
 		options: {
 			debug: false,
-			addendum: {}
-			// offset: '0 0' // or {left: 0, top: 0}
+			addendum: {},
+			offset: '0 0' // or {left: 0, top: 0}
 		},
 		_create: function() {
 			this.clone = $('<div></div>').css({
@@ -43,6 +43,7 @@ jQuery(function($) {
 			$(this.clone).filter(':visible').position({
 				my: 'left top',
 				at: 'left top',
+				offset: this.options.offset,
 				of: this.element
 			});
 		},
