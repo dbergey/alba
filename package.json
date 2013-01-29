@@ -1,0 +1,11 @@
+{
+		"name": "alba",
+		"title": "Alba",
+		"description": "A cross-browser placeholder and email tokenizer.",
+		"version": "0.0.1",
+		"dependencies": {},
+		"licenses": {
+				"type": "UNKNOWN",
+				"url": "https://github.com/dbergey/alba"
+		}
+}
