@@ -61,8 +61,8 @@ jQuery(function($) {
 	$.widget('alba.eclipse', {
 		options: {
 			debug: false,
-			addendum: {}
-			// offset: '0 0' // or {left: 0, top: 0}
+			addendum: {},
+			offset: '0 0' // or {left: 0, top: 0}
 		},
 		_create: function() {
 			this.clone = $('<div></div>').css({
@@ -102,6 +102,7 @@ jQuery(function($) {
 			$(this.clone).filter(':visible').position({
 				my: 'left top',
 				at: 'left top',
+				offset: this.options.offset,
 				of: this.element
 			});
 		},
@@ -123,7 +124,8 @@ jQuery(function($) {
 			debug: false,
 			stay: true, // stay = lion-style (stays until keypress, even if field has focused)
 			fx: ($.browser.msie && $.browser.version < 9) ? false : 'fade', // 'fade' or false
-			color: ($.browser.msie && $.browser.version < 9) ? '#cccccc' : 'rgba(0, 0, 0, 0.35)'
+			color: ($.browser.msie && $.browser.version < 9) ? '#cccccc' : 'rgba(0, 0, 0, 0.35)',
+			offset: '0 0'
 		},
 		_create: function() {
 			// suppress on iOS, since we don't pass focus through nicely yet
@@ -144,7 +146,8 @@ jQuery(function($) {
 					'-ms-user-select': 'none',
 					'user-select': 'none',
 					color: this.options.color
-				}, this.element.is('input[type=search]') ? { paddingLeft: 25 } : {})
+				}, this.element.is('input[type=search]') ? { paddingLeft: 25 } : {}),
+				offset: this.options.offset
 			}).eclipse('fetch');
 			this.element.attr('_placeholder', this.element.attr('placeholder'));
 			this.element.removeAttr('placeholder');
