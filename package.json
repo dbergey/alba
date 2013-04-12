@@ -3,7 +3,11 @@
 		"title": "Alba",
 		"description": "A cross-browser placeholder and email tokenizer.",
 		"version": "0.0.1",
-		"dependencies": {},
+		"dependencies": {
+			"grunt": ">=0.4.0",
+			"grunt-contrib-concat": ">=0.0.1",
+			"grunt-yui-compressor": ">=0.1.1"
+		},
 		"licenses": {
 				"type": "UNKNOWN",
 				"url": "https://github.com/dbergey/alba"
