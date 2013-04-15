@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 
 		concat: {
 			dist: {
-				src: ['jquery.alba.move.js',
+				src: ['jquery.browser.js',
+				      'jquery.alba.move.js',
 				      'jquery.alba.eclipse.js',
 				      'jquery.alba.placeholder.js'
 					],
