@@ -21,6 +21,7 @@ jQuery(function($) {
 					cursor: 'text',
 					// keep placeholders on one line (unless it's a textarea)
 					'overflow': 'hidden',
+					'box-sizing': 'content-box',
 					'text-overflow': 'ellipsis',
 					'white-space': this.element.is('textarea') ? 'wrap' : 'nowrap',
 					// disallow selection of placeholder text
