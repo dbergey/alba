@@ -218,7 +218,7 @@ jQuery(function($) {
 			// 	}
 			// }, this));
 			
-			this.element.bind('keydown.alba_placeholder', $.proxy(function() {
+			this.element.bind('keydown.alba_placeholder paste.alba_placeholder', $.proxy(function() {
 				if (this.options.stay)
 					setTimeout($.proxy(function() {
 						if (this.element.val().length > 0) this.hide();
